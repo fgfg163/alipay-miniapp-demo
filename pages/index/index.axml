@@ -1,0 +1,4 @@
+<view class="page-index">
+  <view>{{address}}</view>
+  <view>{{ip}}</view>
+</view>

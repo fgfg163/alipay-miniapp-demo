@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "pages/index/index",    
+    "pages/show-map/show-map"
+  ],
+  "window": {
+    "defaultTitle": "显示ip地址"
+  }
+}
