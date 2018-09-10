@@ -1,4 +1,6 @@
 <view class="page-index">
-  <view>{{address}}</view>
   <view>{{ip}}</view>
+
+  <button type="primary" onTap="handleRefreshIp">刷新</button>
+  <button type="default" onTap="handleOnSwitchBtnTap">显示地图</button>
 </view>

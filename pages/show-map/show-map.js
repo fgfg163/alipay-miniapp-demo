@@ -1,26 +1,16 @@
-const app = getApp();
-
 Page({
   data: {},
-  onLoad() {
-    app.getUserInfo().then(user =>
-      this.setData({
-        user,
-      })
-    );
+  onReady() {
+    this.mapCtx = my.createMapContext('userMap')
   },
-  onShow() {
-    this.setData({ todos: app.todos });
+  mapCtx: null,
+  getCenterLocation () {
+    this.mapCtx.getCenterLocation({ success(res){
+      console.log(res.longitude)
+      console.log(res.latitude)
+    }})
   },
-  onTodoChanged(e) {
-    const checkedTodos = e.detail.value;
-    app.todos = app.todos.map(todo => ({
-      ...todo,
-      completed: checkedTodos.indexOf(todo.text) > -1,
-    }));
-    this.setData({ todos: app.todos });
-  },
-  addTodo() {
-    my.navigateTo({ url: '../add-todo/add-todo' });
-  },
+  moveToLocation () {
+    this.mapCtx.moveToLocation()
+  }
 });
